@@ -2,12 +2,12 @@ FROM node:10.13-alpine
 
 WORKDIR /app
 
-COPY ["package.json", "package-lock.json*", "./"]
+COPY  package*.json ./
 
 RUN npm install
 
-COPY . .
+COPY --chown=node:node . .
 
-EXPOSE 8000
+EXPOSE 4200
 
 CMD npm start
